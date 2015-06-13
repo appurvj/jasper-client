@@ -558,8 +558,11 @@ class MaryTTS(AbstractTTSEngine):
         os.remove(tmpfile)
 
 
+
+DEFAULT_SLUG = PicoTTS.SLUG
+
 def get_default_engine_slug():
-    return 'osx-tts' if platform.system().lower() == 'darwin' else 'espeak-tts'
+    return 'osx-tts' if platform.system().lower() == 'darwin' else DEFAULT_SLUG
 
 
 def get_engine_by_slug(slug=None):
